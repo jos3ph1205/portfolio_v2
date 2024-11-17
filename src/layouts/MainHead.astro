@@ -1,0 +1,57 @@
+---
+interface Props {
+	title?: string;
+}
+
+const { title = "SJE" } = Astro.props as Props;
+---
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="IE=7" />
+
+	<title>{title}</title>
+	<meta name="description" content="Personal portfolio website" />
+	<meta name="author" content="SJE" />
+
+	<!-- Meta Tages -->
+	<meta property="og:title" content="SJE" />
+	<meta property="og:url" content="sje.pages.dev" />
+	<meta
+		property="og:description"
+		content="Based in Malaysia, I'm a developer who strives to create fluent web apps engrossed in both front-end and back-end programming languages."
+	/>
+	<meta property="og:image" content="" />
+	<meta name="twitter:card" content="" />
+	<meta name="twitter:site" content="" />
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="twitter:image" content="" />
+
+	<!-- <link rel="stylesheet" href="style.css" /> -->
+	<link
+		rel="icon"
+		href="/assets/favicon/active/favicon.svg"
+		type="image/svg+xml"
+		sizes="512x512"
+	/>
+	<link
+		rel="icon"
+		href="/assets/favicon/active/favicon-16x16.png"
+		type="image/"
+		sizes="16x16"
+	/>
+	<link
+		rel="icon"
+		href="/assets/favicon/active/favicon-32x32.png"
+		type="image/"
+		sizes="32x32"
+	/>
+	<link
+		rel="apple-touch-icon"
+		href="/assets/favicon/active/apple-touch-icon.png"
+		sizes="180x180"
+	/>
+	<link rel="manifest" href="/assets/favicon/active/site.webmanifest" />
+</head>

@@ -1,0 +1,10 @@
+# generated types
+.astro/
+.vscode/
+
+# dependencies
+node_modules/
+
+# local content
+local/
+dist/
