@@ -2,7 +2,7 @@ import React from "react";
 import { ShaderGradientCanvas, ShaderGradient } from "@shadergradient/react";
 import * as reactSpring from "@react-spring/three";
 
-function Gradient() {
+function Gradient({ className = "" }) {
 	return (
 		<div
 			style={{
@@ -10,6 +10,7 @@ function Gradient() {
 				inset: 0,
 				zIndex: -100,
 			}}
+			className={className}
 		>
 			<ShaderGradientCanvas
 				style={{
