@@ -25,19 +25,19 @@ function Gradient({ className = "" }) {
 					uSpeed={0.125}
 					uStrength={0.575}
 					uDensity={2.725}
-					color3="#ECDFCC"
-					color2="#3C3D37"
-					color1="#3C3D37"
+					color3="#3C3D37"
+					color2="#181C14"
+					color1="#181C14"
 					reflection={false}
 					lightType="3d"
-					brightness={1.125}
+					brightness={1.275}
 					grain="off"
-					cDistance={2}
-					cPolarAngle={120}
+					cDistance={2.5}
+					cPolarAngle={122}
 					enableTransition={false}
 				/>
 			</ShaderGradientCanvas>
-			<div className="backdrop-blur-sm absolute top-0 left-0 bottom-0 right-0 z-[2]"></div>
+			<div className="backdrop-blur-[2px] absolute top-0 left-0 bottom-0 right-0 z-[2]"></div>
 		</div>
 	);
 }

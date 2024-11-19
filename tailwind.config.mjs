@@ -1,12 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-	content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
-	theme: {
-		extend: {
-			text: {
-				h1: "20px",
-			},
-		},
-	},
-	plugins: [],
+  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  theme: {
+    extend: {
+      colors: {
+        green: {
+          5: "#FF0000",
+        },
+      },
+    },
+  },
+  plugins: [],
 };
