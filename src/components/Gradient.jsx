@@ -35,9 +35,12 @@ function Gradient({ className = "" }) {
 					cDistance={2.5}
 					cPolarAngle={122}
 					enableTransition={false}
+					positionX={-1}
+					positionY={1}
+					positionZ={0}
 				/>
 			</ShaderGradientCanvas>
-			<div className="backdrop-blur-[2px] absolute top-0 left-0 bottom-0 right-0 z-[2]"></div>
+			<div className="backdrop-blur-[0px] absolute top-0 left-0 bottom-0 right-0 z-[2]"></div>
 		</div>
 	);
 }
