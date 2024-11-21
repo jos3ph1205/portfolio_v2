@@ -1,13 +1,17 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
-import Gradient from "../components/Gradient.jsx";
+import MainLayout from '../layouts/MainLayout.astro'
+import Gradient from '../components/Gradient.jsx'
 ---
 
 <MainLayout>
-	<section>
-		<Gradient client:idle />
-		<div class="title-container">
-			<h1 class="">Hey there...</h1>
-		</div>
-	</section>
+   <Gradient client:idle />
+   <section>
+      <div class="flex flex-col">
+         <h1>.</h1>
+
+      </div>
+   </section>
+   <section class="bg-black">
+
+   </section>
 </MainLayout>

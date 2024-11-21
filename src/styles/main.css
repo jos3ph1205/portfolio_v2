@@ -3,49 +3,51 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "SpaceGrotesk";
-  src: url("/assets/fonts/SpaceGrotesk-VariableFont_wght.ttf") format("truetype"),
-       url("/assets/fonts/SpaceGrotesk-VariableFont_wght.woff2") format("woff2");
+    font-family: "SpaceGrotesk";
+    src: url("/assets/fonts/SpaceGrotesk-VariableFont_wght.ttf") format("truetype"),
+    url("/assets/fonts/SpaceGrotesk-VariableFont_wght.woff2") format("woff2");
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  font-family: "SpaceGrotesk", monospace;
-  color: white;
-  -webkit-tap-highlight-color: transparent;
-
-
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "SpaceGrotesk", monospace;
+    color: white;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
-
 }
 
 @layer base {
-  section {
-    @apply min-h-[100svh] flex justify-center items-center;
-  }
+    section {
+        @apply flex justify-center items-center mx-auto min-h-svh container px-28 xl:px-24 lg:px-20 md:px-12 sm:px-4;
+    }
 
-  h1 {
-    @apply text-6xl font-bold tracking-tight;
-  }
-  h2 {
-    @apply text-4xl font-bold tracking-tight;
-  }
-  h3 {
-    @apply text-3xl font-bold tracking-tight;
-  }
-  h4 {
-    @apply text-2xl font-bold tracking-tight;
-  }
-  h5 {
-    @apply text-xl font-bold tracking-tight;
-  }
-  h6 {
-    @apply text-lg font-bold tracking-tight;
-  }
+    h1 {
+        @apply text-6xl font-bold tracking-tight;
+    }
+
+    h2 {
+        @apply text-4xl font-bold tracking-tight;
+    }
+
+    h3 {
+        @apply text-3xl font-bold tracking-tight;
+    }
+
+    h4 {
+        @apply text-2xl font-bold tracking-tight;
+    }
+
+    h5 {
+        @apply text-xl font-bold tracking-tight;
+    }
+
+    h6 {
+        @apply text-lg font-bold tracking-tight;
+    }
 }

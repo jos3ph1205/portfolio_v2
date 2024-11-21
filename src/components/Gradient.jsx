@@ -1,51 +1,51 @@
-import React from "react";
-import { ShaderGradientCanvas, ShaderGradient } from "@shadergradient/react";
-import * as reactSpring from "@react-spring/three";
+import React from 'react'
+import { ShaderGradientCanvas, ShaderGradient } from '@shadergradient/react'
+import * as reactSpring from '@react-spring/three'
 
-function Gradient({ className = "" }) {
-	return (
-		<div
-			style={{
-				position: "absolute",
-				inset: 0,
-				zIndex: -100,
-			}}
-			className={className}
-		>
-			<ShaderGradientCanvas
-				style={{
-					position: "absolute",
-					inset: 0,
-					pointerEvents: "none",
-					zIndex: 0,
-				}}
-			>
-				<ShaderGradient
-					type="waterPlane"
-					uSpeed={0.125}
-					uStrength={0.575}
-					uDensity={2.725}
-					color3="#3C3D37"
-					color2="#181C14"
-					color1="#181C14"
-					reflection={false}
-					lightType="3d"
-					brightness={1.275}
-					grain="off"
-					cDistance={2.5}
-					cPolarAngle={122}
-					enableTransition={false}
-					positionX={-1}
-					positionY={1}
-					positionZ={0}
-				/>
-			</ShaderGradientCanvas>
-			<div className="backdrop-blur-[0px] absolute top-0 left-0 bottom-0 right-0 z-[2]"></div>
-		</div>
-	);
+function Gradient({ className = '' }) {
+   return (
+      <div
+         style={{
+            position: 'fixed',
+            inset: 0,
+            zIndex: -100,
+         }}
+         className={className}
+      >
+         <ShaderGradientCanvas
+            style={{
+               position: 'absolute',
+               inset: 0,
+               pointerEvents: 'none',
+               zIndex: 0,
+            }}
+         >
+            <ShaderGradient
+               type="waterPlane"
+               uSpeed={0.125}
+               uStrength={0.575}
+               uDensity={2.725}
+               color3="#3C3D37"
+               color2="#181C14"
+               color1="#181C14"
+               reflection={false}
+               lightType="3d"
+               brightness={1.275}
+               grain="off"
+               cDistance={2.5}
+               cPolarAngle={122}
+               enableTransition={false}
+               positionX={-1}
+               positionY={1}
+               positionZ={0}
+            />
+         </ShaderGradientCanvas>
+         <div className="backdrop-blur-[0px] absolute top-0 left-0 bottom-0 right-0 z-[2]"></div>
+      </div>
+   )
 }
 
-export default Gradient;
+export default Gradient
 
 // type MeshT = {
 //   type?: 'plane' | 'sphere' | 'waterPlane'
