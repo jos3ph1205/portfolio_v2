@@ -1,20 +1,18 @@
 ---
 // layout imports
 import Head from '../layouts/MainHead.astro'
+// componenet imports
+import Cursor from '../components/Cursor.astro'
 ---
 
 <html lang="en">
 <Head />
 <body class="cursor-none group/body">
-<div id="custom-cursor"
-     class="fixed left-0 top-0 -translate-x-1/2 -translate-y-1/2 w-5 aspect-square border rounded-full opacity-0 transition-opacity duration-300 ease-in-out pointer-events-none group-hover/body:opacity-100"
-     aria-hidden>
-</div>
+<Cursor />
 <div class="">
    <slot />
 </div>
 <script>
-   import '../scripts/Cursor.js'
    import '../scripts/SmoothScroll.js'
 </script>
 </body>

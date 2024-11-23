@@ -1,0 +1,31 @@
+---
+const cursorSize = '28px'
+---
+<div
+   id="custom-cursor"
+   data-cursor-type="default"
+   class=`fixed left-0 top-0 `
+   aria-hidden="true">
+</div>
+<style define:vars={{ cursorSize }}>
+    #custom-cursor[data-cursor-type="default"] {
+        @apply fixed left-0 top-0 w-[--cursorSize] aspect-square border rounded-full opacity-0 pointer-events-none shadow-2xl drop-shadow-xl z-[100];
+
+        translate: -50% -50%;
+
+        transition-property: opacity, scale;
+        transition-duration: 300ms, 150ms;
+        transition-timing-function: ease-out;
+    }
+
+    body:hover #custom-cursor {
+        opacity: 1;
+    }
+
+    body:active #custom-cursor {
+        scale: 0.75;
+    }
+</style>
+<script>
+   import '../scripts/Cursor.js'
+</script>

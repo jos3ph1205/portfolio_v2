@@ -33,5 +33,5 @@ export default {
          // => @media (max-width: 639px) { ... }
       },
    },
-   plugins: [],
+   plugins: [require('tailwind-children')],
 }

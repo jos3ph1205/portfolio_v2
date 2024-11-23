@@ -4,25 +4,63 @@
 
 @font-face {
     font-family: "SpaceGrotesk";
-    src: url("/assets/fonts/SpaceGrotesk-VariableFont_wght.ttf") format("truetype"),
-    url("/assets/fonts/SpaceGrotesk-VariableFont_wght.woff2") format("woff2");
+    src: local('Space Grotesk'),
+    url("/assets/fonts/SpaceGrotesk-VariableFont_wght.woff2") format("woff2"),
+    url("/assets/fonts/SpaceGrotesk-VariableFont_wght.ttf") format("truetype");
 }
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-family: "SpaceGrotesk", monospace;
-    color: white;
-    -webkit-tap-highlight-color: transparent;
+:root {
+    --scrollbar-size: 8px;
 }
 
-body {
+::-webkit-scrollbar {
+    width: var(--scrollbar-size);
+    height: var(--scrollbar-size);
+}
+
+::-webkit-scrollbar-track {
+    cursor: auto;
+    background-color: theme(colors.quat);
+}
+
+::-webkit-scrollbar-thumb {
+    cursor: auto;
+    background-color: color-mix(in srgb, theme(colors.sec.lt), transparent 80%);
+    transition: all 2s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: color-mix(in srgb, theme(colors.sec.lt), transparent 76%)
+}
+
+::-webkit-scrollbar-button {
+    cursor: pointer;
+    background-color: theme(colors.prim.DEFAULT);
+    height: calc(var(--scrollbar-size) * 2 / 3);
+}
+
+::-webkit-scrollbar-button:hover {
+    background-color: theme(colors.prim.lt);;
+    height: var(--scrollbar-size);
+}
+
+::selection {
+    background-color: theme(colors.sec.DEFAULT);
+    color: theme(colors.quat);
 }
 
 @layer base {
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        color: white;
+        font-family: "SpaceGrotesk", monospace;
+        -webkit-tap-highlight-color: transparent;
+    }
+
     section {
         @apply flex justify-center items-center mx-auto min-h-svh container px-28 xl:px-24 lg:px-20 md:px-12 sm:px-4;
     }
