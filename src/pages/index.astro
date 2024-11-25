@@ -1,33 +1,15 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro'
 import Gradient from '../components/Gradient.jsx'
+import Editor from "../components/Editor.jsx"
 ---
 
 <MainLayout>
    <Gradient client:idle />
    <section>
       <div class="w-full flex flex-col items-center gap-8">
-         <h1 class="text-center ">Text...</h1>
-         <div
-            class="p-4 w-[min(800px,100%)] bg-[color-mix(in_srgb,theme(colors.quat),transparent_50%)] backdrop-blur-lg rounded-md text-xl leading-relaxed"
-            aria-label="typewritter"
-            aria-description="visual-studio-code-esque typewritter dialog">
-            <div
-               class="flex-col heir-p:inline heir-span:text-gray-500 heir-span:opacity-25 heir-span:select-none">
-               <div class="">
-                  <span class="">21</span>
-                  <p class="">Some text</p>
-               </div>
-               <div class="">
-                  <span class="">22</span>
-                  <p class="">More text</p>
-               </div>
-               <div class="">
-                  <span class="">23</span>
-                  <p class="">What do you think</p>
-               </div>
-            </div>
-         </div>
+         <h1 class="text-center ">Greetings</h1>
+         <Editor client:idle />
       </div>
    </section>
    <section class="bg-black">

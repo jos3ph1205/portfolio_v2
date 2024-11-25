@@ -8,6 +8,18 @@ const cursorSize = '28px'
    aria-hidden="true">
 </div>
 <style define:vars={{ cursorSize }}>
+    @keyframes cursor-blink {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
     #custom-cursor[data-cursor-type="default"] {
         @apply fixed left-0 top-0 w-[--cursorSize] aspect-square border rounded-full opacity-0 pointer-events-none shadow-2xl drop-shadow-xl z-[100];
 

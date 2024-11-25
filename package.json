@@ -17,9 +17,11 @@
     "@types/react-dom": "^18.3.1",
     "astro": "^4.16.13",
     "gsap": "^3.12.5",
+    "highlight.js": "^11.10.0",
     "lenis": "^1.1.16",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-tabs": "^6.0.2",
     "tailwind-children": "^0.5.0",
     "tailwindcss": "^3.4.15",
     "three": "^0.170.0"

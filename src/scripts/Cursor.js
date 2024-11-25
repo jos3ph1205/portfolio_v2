@@ -2,8 +2,8 @@ import gsap from "gsap"
 import CustomEase from "gsap/CustomEase"
 
 const cursor = document.querySelector("div")
-const typeTransition = 0.175
-const moveSpeed = 0.275
+const typeTransition = 0.125
+const moveSpeed = 0.375
 
 gsap.registerPlugin(CustomEase)
 
@@ -31,18 +31,23 @@ function hasText(el) {
 
 function DetectType(target) {
    const text = grabPureTextContent(target)
+   const ignore = !target.hasAttribute("data-cursor-ignore") === true
+   const forceText = !target.hasAttribute("data-cursor-text")
 
    if (
-      target.nodeName === "H1" ||
-      target.nodeName === "H2" ||
-      target.nodeName === "H3" ||
-      target.nodeName === "H4" ||
-      target.nodeName === "H5" ||
-      target.nodeName === "H6"
+      // prettier-ignore
+      (
+         target.nodeName === "H1" ||
+         target.nodeName === "H2" ||
+         target.nodeName === "H3" ||
+         target.nodeName === "H4" ||
+         target.nodeName === "H5" ||
+         target.nodeName === "H6"
+      ) && ignore
    )
       return "title"
 
-   if (text !== "") return "text"
+   if (text !== "" && ignore) return "text"
 
    if (target.nodeName === "a") return "link"
 
@@ -74,7 +79,6 @@ CustomEase.create("cursor", "M0,0 C0.274,1.351 0.509,1 1,1 ")
 
 function MouseMove_default() {
    window.onmousemove = (e) => {
-      console.log("yes")
       const target = e.target
       const { x, y } = e
 
@@ -86,7 +90,7 @@ function MouseMove_default() {
 function MouseMove_Text(target) {
    window.onmousemove = (e) => {
       const { x, y } = e
-      let { reducedY } = reducedMotionRelative(x, y, target)
+      let { reducedY } = reducedMotionRelative(x, y, target, 100)
 
       cursorToX(x)
       cursorToY(reducedY)
@@ -100,13 +104,14 @@ function MouseType_Default() {
       backgroundColor: "transparent",
       backdropFilter: "none",
       duration: typeTransition,
+      animation: "none",
    })
 }
 
 function MouseType_Text(target) {
    const text = hasText(target)
    gsap.to(cursor, {
-      height: text.height * 1.2,
+      height: text.height * 1.1,
       width:
          text.height * 0.1 < 3
             ? 3
@@ -115,6 +120,7 @@ function MouseType_Text(target) {
               : text.height * 0.1,
       backgroundColor: "white",
       duration: typeTransition,
+      animation: "cursor-blink 1.5s ease-out forwards infinite",
    })
 }
 
@@ -122,18 +128,16 @@ function MouseType_Title(target) {
    const text = hasText(target)
 
    gsap.to(cursor, {
-      height: text.height * 1.5,
-      width: text.height * 1.5,
-      backdropFilter: "invert(1) brightness(2) grayscale(1)",
+      height: text.height * 1.75,
+      width: text.height * 1.75,
+      backdropFilter: "invert(1) grayscale(1) contrast(2)",
       duration: typeTransition,
    })
 }
 
-window.onmouseover = (e) => {
+function CursorHandler(e) {
    const target = e.target
    const type = DetectType(target)
-
-   console.log(type)
 
    if (type === "title") {
       MouseType_Title(target)
@@ -145,3 +149,5 @@ window.onmouseover = (e) => {
       MouseType_Default()
    }
 }
+
+window.onmouseover = (e) => CursorHandler(e)
