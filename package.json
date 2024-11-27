@@ -27,6 +27,7 @@
     "three": "^0.170.0"
   },
   "devDependencies": {
-    "@types/three": "^0.170.0"
+    "@types/three": "^0.170.0",
+    "shiki": "^1.23.1"
   }
 }

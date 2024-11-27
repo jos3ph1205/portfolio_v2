@@ -59,7 +59,7 @@
         color: white;
         font-family: "SpaceGrotesk", monospace;
         -webkit-tap-highlight-color: transparent;
-        /*outline: solid 1px hsla(0 0% 100% / 0.5);*/
+        /*outline: solid 0.1px hsla(0 0% 100% / 0.5) !important;*/
     }
 
     section {
