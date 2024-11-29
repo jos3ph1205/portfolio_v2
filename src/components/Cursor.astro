@@ -1,10 +1,12 @@
 ---
 const cursorSize = '28px'
+
+const { classList } = Astro.props
 ---
 <div
    id="custom-cursor"
    data-cursor-type="default"
-   class=`fixed left-0 top-0 `
+	class=`${classList} fixed left-0 top-0`
    aria-hidden="true">
 </div>
 <style define:vars={{ cursorSize }}>

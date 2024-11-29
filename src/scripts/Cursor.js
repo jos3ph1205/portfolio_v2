@@ -32,7 +32,7 @@ function hasText(el) {
 function DetectType(target) {
    const text = grabPureTextContent(target)
    const ignore = !target.hasAttribute("data-cursor-ignore") === true
-   const forceText = !target.hasAttribute("data-cursor-text")
+   const forceText = target.hasAttribute("data-cursor-text")
 
    if (
       // prettier-ignore
@@ -47,7 +47,7 @@ function DetectType(target) {
    )
       return "title"
 
-   if (text !== "" && ignore) return "text"
+   if ((text !== "" || forceText) && ignore) return "text"
 
    if (target.nodeName === "a") return "link"
 
@@ -111,17 +111,17 @@ function MouseType_Default() {
 function MouseType_Text(target) {
    const text = hasText(target)
    gsap.to(cursor, {
-      height: text.height * 1.1,
-      width:
-         text.height * 0.1 < 3
-            ? 3
-            : text.height * 0.1 > 5
-              ? 5
-              : text.height * 0.1,
-      backgroundColor: "white",
-      duration: typeTransition,
-      animation: "cursor-blink 1.5s ease-out forwards infinite",
-   })
+		height: text.height * 1.1,
+		width:
+			text.height * 0.1 < 2
+				? 3
+				: text.height * 0.1 > 4
+					? 5
+					: text.height * 0.1,
+		backgroundColor: "white",
+		duration: typeTransition,
+		animation: "cursor-blink 1.5s ease-out forwards infinite",
+	})
 }
 
 function MouseType_Title(target) {
