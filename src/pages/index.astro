@@ -2,6 +2,9 @@
 import MainLayout from '../layouts/MainLayout.astro'
 import Gradient from '../components/Gradient.jsx'
 import Editor from "../components/Editor.jsx"
+import Editor2 from "../components/Editor_V2.jsx"
+import tabs from "../content/EditorContent"
+
 ---
 
 <MainLayout>
@@ -9,10 +12,10 @@ import Editor from "../components/Editor.jsx"
    <section>
       <div class="w-full flex flex-col items-center gap-8">
          <h1 class="text-center ">Greetings</h1>
-         <Editor client:idle />
+         <Editor2 client:idle tabs={tabs} />
       </div>
    </section>
    <section class="bg-black">
-      <!-- apply to all children with matching .child class -->
+
    </section>
 </MainLayout>

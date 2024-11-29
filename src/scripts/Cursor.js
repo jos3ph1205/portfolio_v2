@@ -2,7 +2,7 @@ import gsap from "gsap"
 import CustomEase from "gsap/CustomEase"
 
 const cursor = document.querySelector("div")
-const typeTransition = 0.125
+const typeTransition = 0.175
 const moveSpeed = 0.375
 
 gsap.registerPlugin(CustomEase)
@@ -31,7 +31,7 @@ function hasText(el) {
 
 function DetectType(target) {
    const text = grabPureTextContent(target)
-   const ignore = !target.hasAttribute("data-cursor-ignore") === true
+   const ignore = !target.hasAttribute("data-cursor-ignore")
    const forceText = target.hasAttribute("data-cursor-text")
 
    if (
