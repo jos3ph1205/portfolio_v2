@@ -22,21 +22,18 @@ function hasText(el) {
    const content = grabPureTextContent(el)
    const height = el.offsetHeight
 
-   if (content !== "") {
-      return { content: content, height: height }
-   } else {
-      return false
-   }
+   return { content: content, height: height }
+
 }
 
 function DetectType(target) {
-   const text = grabPureTextContent(target)
-   const ignore = !target.hasAttribute("data-cursor-ignore")
-   const forceText = target.hasAttribute("data-cursor-text")
+	const text = grabPureTextContent(target)
+	const ignore = !target.hasAttribute("data-cursor-ignore")
+	const forceText = target.hasAttribute("data-cursor-text")
 
-   if (
-      // prettier-ignore
-      (
+	if (
+		// prettier-ignore
+		(
          target.nodeName === "H1" ||
          target.nodeName === "H2" ||
          target.nodeName === "H3" ||
@@ -44,16 +41,16 @@ function DetectType(target) {
          target.nodeName === "H5" ||
          target.nodeName === "H6"
       ) && ignore
-   )
-      return "title"
+	)
+		return "title"
 
-   if ((text !== "" || forceText) && ignore) return "text"
+	if ((text !== "" || forceText) && ignore) return "text"
 
-   if (target.nodeName === "a") return "link"
+	if (target.nodeName === "a") return "link"
 
-   if (target.nodeName === "button") return "button"
+	if (target.nodeName === "button") return "button"
 
-   return "default"
+	return "default"
 }
 
 let cursorToX = gsap.quickTo(cursor, "left", {
@@ -110,17 +107,13 @@ function MouseType_Default() {
 
 function MouseType_Text(target) {
    const text = hasText(target)
-   gsap.to(cursor, {
+   console.log(text.height)
+	gsap.to(cursor, {
 		height: text.height * 1.1,
-		width:
-			text.height * 0.1 < 2
-				? 3
-				: text.height * 0.1 > 4
-					? 5
-					: text.height * 0.1,
+		width: 2,
 		backgroundColor: "white",
 		duration: typeTransition,
-		animation: "cursor-blink 1.5s ease-out forwards infinite",
+		animation: `cursor-blink 2.5s ease-out forwards infinite`,
 	})
 }
 

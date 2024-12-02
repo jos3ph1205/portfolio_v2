@@ -10,18 +10,18 @@ import tabs from "../content/EditorContent"
 ---
 
 <MainLayout>
-   <Gradient client:idle />
-   <section>
-      <div class="w-full flex flex-col items-center gap-8">
-         <h1 class="text-center ">Greetings</h1>
-         <Editor2 client:idle tabs={tabs} />
-      </div>
-   </section>
-   <section class="bg-black">
+  <Gradient client:idle />
+  <section>
+    <div class="w-full flex flex-col items-center gap-8">
+      <h1 class="text-center ">Greetings</h1>
+      <Editor2 client:idle tabs={tabs} />
+    </div>
+  </section>
+  <section class="bg-black">
 
-   </section>
+  </section>
 </MainLayout>
-`,
+ `,
 	},
 	{
 		title: "main.css",

@@ -44,12 +44,12 @@ class CodeBlock extends React.Component {
 			this.props.children.split("\n").length.toString().length + 0.5
 
 		return (
-			<div className="flex flex-col min-h-[60svh] text-base">
+			<div className="flex flex-col text-base min-h-[60svh]">
 				{this.props.children.split("\n").map((line, index) => (
 					<div
 						tabIndex={0}
 						key={index}
-						className="child-code:!p-0 transition-colors duration-100 child-span:hover:!text-gray-300/60 child-span:focus-within:!text-gray-300/60 focus-within:bg-white/5 px-3 flex"
+						className="!outline-none child-code:!p-0 transition-colors duration-100 child-span:hover:!text-gray-300/60 child-span:focus-within:!text-gray-300/60 focus-within:bg-white/5 px-3 flex"
 					>
 						<span
 							data-cursor-ignore
@@ -60,13 +60,13 @@ class CodeBlock extends React.Component {
 						<code
 							data-cursor-text
 							data-codeline
-							className="heir-span:inline-flex border-l border-white/10 ml-5 !w-full !pl-1 !bg-transparent whitespace-pre-wrap"
+							className="selection:!bg-tert selection:!text-[unset] heir-span:inline-flex border-l border-white/10 ml-5 !w-full !pl-1 !bg-transparent whitespace-pre-wrap !tracking-wide"
 						>
 							{line}
 						</code>
 					</div>
 				))}
-				<div className="flex-grow px-3 flex">
+				<div className="flex flex-grow px-3">
 					<span
 						className={`select-none whitespace-pre font-mono !w-[${lineIndent}ch] `}
 					>
@@ -92,11 +92,12 @@ const Editor = ({ tabs }) => {
 						descendant-li:transition-[background,border-color]
 						descendant-li:duration-200
 						descendant-li:ease-out
-						descendant-li:px-8
-						descendant-li:py-3
-						descendant-li:outline-none
+						descendant-li:!px-8
+						descendant-li:!py-3
+						descendant-li:!select-none
 
 						hover:[&>li[aria-selected='false']]:bg-[color-mix(in_srgb,theme(colors.tert),transparent_75%)]
+						focus:[&>li[aria-selected='false']]:bg-[color-mix(in_srgb,theme(colors.tert),transparent_75%)]
 
 						[&>li[aria-selected='true']]:bg-[color-mix(in_srgb,theme(colors.tert),transparent_25%)]
 						[&>li]:border-b-[3px]
@@ -106,10 +107,8 @@ const Editor = ({ tabs }) => {
 					"
 				>
 					{tabs.map((tab, index) => (
-						<Tab key={index}>
-							<button className="select-none pointer-events-none">
-								{tab.title}
-							</button>
+						<Tab data-cursor-ignore tabIndex={"0"} key={index}>
+							{tab.title}
 						</Tab>
 					))}
 				</TabList>
