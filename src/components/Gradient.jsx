@@ -4,45 +4,45 @@ import * as reactSpring from '@react-spring/three'
 
 function Gradient({ className = '' }) {
    return (
-      <div
-         style={{
-            position: 'fixed',
-            inset: 0,
-            zIndex: -100,
-         }}
-         className={className}
-      >
-         <ShaderGradientCanvas
-            style={{
-               position: 'absolute',
-               inset: 0,
-               pointerEvents: 'none',
-               zIndex: 0,
-            }}
-         >
-            <ShaderGradient
-               type="waterPlane"
-               uSpeed={0.125}
-               uStrength={0.575}
-               uDensity={2.275}
-               color3="#ECDFCC"
-               color2="#3C3D37"
-               color1="#181C14"
-               reflection={false}
-               lightType="3d"
-               brightness={0.875}
-               grain="off"
-               cDistance={3.5}
-               cPolarAngle={122}
-               enableTransition={false}
-               positionX={-1}
-               positionY={1}
-               positionZ={0}
-            />
-         </ShaderGradientCanvas>
-         <div className="backdrop-blur-[0px] absolute top-0 left-0 bottom-0 right-0 z-[2]"></div>
-      </div>
-   )
+		<div
+			style={{
+				position: "fixed",
+				inset: 0,
+				zIndex: -100,
+			}}
+			className={className}
+		>
+			<ShaderGradientCanvas
+				style={{
+					position: "absolute",
+					inset: 0,
+					pointerEvents: "none",
+					zIndex: 0,
+				}}
+			>
+				<ShaderGradient
+					type="waterPlane"
+					uSpeed={0.125}
+					uStrength={0.575}
+					uDensity={2.275}
+					color3="#ECDFCC"
+					color2="#3C3D37"
+					color1="#181C14"
+					reflection={false}
+					lightType="3d"
+					brightness={0.875}
+					grain="off"
+					cDistance={3.5}
+					cPolarAngle={122}
+					enableTransition={false}
+					positionX={-1}
+					positionY={1}
+					positionZ={0}
+				/>
+			</ShaderGradientCanvas>
+			<div className="backdrop-blur-[0px] absolute top-0 left-0 bottom-0 right-0 z-[2]"></div>
+		</div>
+	)
 }
 
 export default Gradient

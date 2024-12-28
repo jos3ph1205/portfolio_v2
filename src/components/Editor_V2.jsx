@@ -32,6 +32,7 @@ class CodeBlock extends React.Component {
 		}
 	}
 
+	//
 	highlightCode() {
 		const codeBlocks = document.querySelectorAll("code")
 		codeBlocks.forEach((block) => {
@@ -60,7 +61,7 @@ class CodeBlock extends React.Component {
 						<code
 							data-cursor-text
 							data-codeline
-							className="selection:!bg-tert selection:!text-[unset] heir-span:inline-flex border-l border-white/10 ml-5 !w-full !pl-1 !bg-transparent whitespace-pre-wrap !tracking-wide"
+							className=" selection:!bg-tert selection:!text-[unset] border-l heir-span:pointer-events-none border-white/10 ml-5 !w-full !pl-1 !bg-transparent whitespace-pre-wrap !tracking-wide"
 						>
 							{line}
 						</code>
