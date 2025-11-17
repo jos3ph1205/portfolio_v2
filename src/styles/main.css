@@ -9,8 +9,9 @@
     url("/assets/fonts/SpaceGrotesk-VariableFont_wght.ttf") format("truetype");
 }
 
+
 :root {
-    --scrollbar-size: 8px;
+    
 }
 
 ::-webkit-scrollbar {
